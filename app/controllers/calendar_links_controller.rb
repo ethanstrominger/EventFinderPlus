@@ -1,5 +1,7 @@
-class CalendarLinksController < ApplicationController
-  before_action :set_calendar_link, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class CalendarLinksController < ProtectedController
+  before_action :set_calendar_link, only: %i[show update destroy]
 
   # GET /calendar_links
   def index
@@ -15,7 +17,7 @@ class CalendarLinksController < ApplicationController
 
   # POST /calendar_links
   def create
-    @calendar_link = CalendarLink.new(calendar_link_params)
+    @calendar_link = current_user.calendar_links.build(calendar_link_params)
 
     if @calendar_link.save
       render json: @calendar_link, status: :created, location: @calendar_link
@@ -39,13 +41,14 @@ class CalendarLinksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_calendar_link
-      @calendar_link = CalendarLink.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def calendar_link_params
-      params.require(:calendar_link).permit(:name, :url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_calendar_link
+    @calendar_link = current_user.calendar_links.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def calendar_link_params
+    params.require(:calendar_link).permit(:name, :url)
+  end
 end
