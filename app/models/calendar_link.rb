@@ -1,0 +1,2 @@
+class CalendarLink < ApplicationRecord
+end
