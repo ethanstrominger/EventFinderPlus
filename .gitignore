@@ -5,6 +5,9 @@
 .AppleDouble
 .LSOverride
 
+# scrath files
+scratch/
+
 # Icon must end with two \r
 Icon
 
@@ -202,4 +205,3 @@ bower.json # same
 .byebug_history
 
 # End of https://www.gitignore.io/api/rails
-

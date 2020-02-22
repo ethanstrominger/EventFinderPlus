@@ -1,4 +1,12 @@
-module Util
+module AuthHelper
+  def user_params
+    {
+      email: 'alice@example.com',
+      password: 'foobarbaz',
+      password_confirmation: 'foobarbaz'
+    }
+  end
+
   def signup_and_in
     post '/sign-up', params: { credentials: user_params }
     post '/sign-in', params: { credentials: user_params }

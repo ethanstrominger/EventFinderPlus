@@ -4,16 +4,12 @@ require 'rails_helper'
 require 'requests/auth_helper'
 
 RSpec.configure do |c|
-  c.include Util
+  c.include AuthHelper
 end
 
 RSpec.describe 'Authentication API' do
-  def user_params
-    {
-      email: 'alice@example.com',
-      password: 'foobarbaz',
-      password_confirmation: 'foobarbaz'
-    }
+  before(:all) do
+    User.delete_all
   end
 
   after(:all) do
@@ -64,9 +60,8 @@ RSpec.describe 'Authentication API' do
       }
     end
 
-
     before(:each) do
-      signupin
+      signup_and_in
       # post '/sign-up', params: { credentials: user_params }
       # post '/sign-in', params: { credentials: user_params }
       #
