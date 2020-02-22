@@ -1,1 +1,2 @@
 - Have tests only delete the user they create.  Each test suite should create a different user.
+- Add better debug ability - abiity to hide debug output based on env variable, hide password in debug, add color and `**** DEBUG ****` so easier to spot debug vs other output
