@@ -17,7 +17,7 @@ RSpec.describe 'Authentication API' do
   end
 
   context 'without an account' do
-    describe 'POST /sign-up' do
+    describe 'POST /sign-up', describe_name: 'signup' do
       it 'creates a new user' do
         post '/sign-up', params: { credentials: user_params }
 
@@ -36,7 +36,7 @@ RSpec.describe 'Authentication API' do
       post '/sign-up', params: { credentials: user_params }
     end
 
-    describe 'POST /sign-in' do
+    describe 'POST /sign-in', describe_name: 'signin' do
       it 'returns a token' do
         post '/sign-in', params: { credentials: user_params }
 
@@ -69,7 +69,7 @@ RSpec.describe 'Authentication API' do
       # @user_id = JSON.parse(response.body)['user']['id']
     end
 
-    describe 'PATCH /change-password/' do
+    describe 'PATCH /change-password/', describe_name: 'changepw' do
       def new_password_params
         {
           old: 'foobarbaz',
@@ -87,7 +87,7 @@ RSpec.describe 'Authentication API' do
       end
     end
 
-    describe 'DELETE /sign-out/' do
+    describe 'DELETE /sign-out/', describe_name: 'signout' do
       it 'is successful' do
         delete '/sign-out/', headers: headers
 
