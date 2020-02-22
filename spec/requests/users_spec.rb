@@ -54,11 +54,6 @@ RSpec.describe 'Authentication API' do
   end
 
   context 'while signed in' do
-    def headers
-      {
-        'HTTP_AUTHORIZATION' => "Token token=#{@token}"
-      }
-    end
 
     before(:each) do
       signup_and_in

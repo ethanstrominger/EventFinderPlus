@@ -1,4 +1,10 @@
 module AuthHelper
+  def headers
+    {
+      'HTTP_AUTHORIZATION' => "Token token=#{@token}"
+    }
+  end
+
   def user_params
     {
       email: 'alice@example.com',
