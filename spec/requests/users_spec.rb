@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'requests/auth_helper'
+
+RSpec.configure do |c|
+  c.include Util
+end
 
 RSpec.describe 'Authentication API' do
   def user_params
@@ -59,12 +64,14 @@ RSpec.describe 'Authentication API' do
       }
     end
 
-    before(:each) do
-      post '/sign-up', params: { credentials: user_params }
-      post '/sign-in', params: { credentials: user_params }
 
-      @token = JSON.parse(response.body)['user']['token']
-      @user_id = JSON.parse(response.body)['user']['id']
+    before(:each) do
+      signupin
+      # post '/sign-up', params: { credentials: user_params }
+      # post '/sign-in', params: { credentials: user_params }
+      #
+      # @token = JSON.parse(response.body)['user']['token']
+      # @user_id = JSON.parse(response.body)['user']['id']
     end
 
     describe 'PATCH /change-password/' do
