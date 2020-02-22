@@ -25,7 +25,7 @@ Client
 
 1.  [X] [Download Browser Template](https://git.generalassemb.ly/ga-wdi-boston/browser-template)
 1.  [X] Create a Github Repository
-1.  [ ] [Deploy to Github Pages](https://git.generalassemb.ly/ga-wdi-boston/gh-pages-deployment-guide)
+1.  [X] [Deploy to Github Pages](https://git.generalassemb.ly/ga-wdi-boston/gh-pages-deployment-guide)
 
 ### API
 1.  [?] Review [rails-api-one-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-one-to-many) or [rails-api-many-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-many-to-many)
