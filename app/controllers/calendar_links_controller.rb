@@ -5,7 +5,7 @@ class CalendarLinksController < ProtectedController
 
   # GET /calendar_links
   def index
-    @calendar_links = CalendarLink.all
+    @calendar_links = current_user.calendar_links.all
 
     render json: @calendar_links
   end
