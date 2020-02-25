@@ -23,10 +23,10 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe CalendarLinksController, type: :controller do
+RSpec.describe CalendarsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # CalendarLink. As you add validations to CalendarLink, be sure to
+  # Calendar. As you add validations to Calendar, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -38,12 +38,12 @@ RSpec.describe CalendarLinksController, type: :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # CalendarLinksController. Be sure to keep this updated too.
+  # CalendarsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET #index" do
     it "returns a success response" do
-      calendar_link = CalendarLink.create! valid_attributes
+      calendar = Calendar.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,33 +51,33 @@ RSpec.describe CalendarLinksController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      calendar_link = CalendarLink.create! valid_attributes
-      get :show, params: {id: calendar_link.to_param}, session: valid_session
+      calendar = Calendar.create! valid_attributes
+      get :show, params: {id: calendar.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new CalendarLink" do
+      it "creates a new Calendar" do
         expect {
-          post :create, params: {calendar_link: valid_attributes}, session: valid_session
-        }.to change(CalendarLink, :count).by(1)
+          post :create, params: {calendar: valid_attributes}, session: valid_session
+        }.to change(Calendar, :count).by(1)
       end
 
-      it "renders a JSON response with the new calendar_link" do
+      it "renders a JSON response with the new calendar" do
 
-        post :create, params: {calendar_link: valid_attributes}, session: valid_session
+        post :create, params: {calendar: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
-        expect(response.location).to eq(calendar_link_url(CalendarLink.last))
+        expect(response.location).to eq(calendar_url(Calendar.last))
       end
     end
 
     context "with invalid params" do
-      it "renders a JSON response with errors for the new calendar_link" do
+      it "renders a JSON response with errors for the new calendar" do
 
-        post :create, params: {calendar_link: invalid_attributes}, session: valid_session
+        post :create, params: {calendar: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -90,27 +90,27 @@ RSpec.describe CalendarLinksController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested calendar_link" do
-        calendar_link = CalendarLink.create! valid_attributes
-        put :update, params: {id: calendar_link.to_param, calendar_link: new_attributes}, session: valid_session
-        calendar_link.reload
+      it "updates the requested calendar" do
+        calendar = Calendar.create! valid_attributes
+        put :update, params: {id: calendar.to_param, calendar: new_attributes}, session: valid_session
+        calendar.reload
         skip("Add assertions for updated state")
       end
 
-      it "renders a JSON response with the calendar_link" do
-        calendar_link = CalendarLink.create! valid_attributes
+      it "renders a JSON response with the calendar" do
+        calendar = Calendar.create! valid_attributes
 
-        put :update, params: {id: calendar_link.to_param, calendar_link: valid_attributes}, session: valid_session
+        put :update, params: {id: calendar.to_param, calendar: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json')
       end
     end
 
     context "with invalid params" do
-      it "renders a JSON response with errors for the calendar_link" do
-        calendar_link = CalendarLink.create! valid_attributes
+      it "renders a JSON response with errors for the calendar" do
+        calendar = Calendar.create! valid_attributes
 
-        put :update, params: {id: calendar_link.to_param, calendar_link: invalid_attributes}, session: valid_session
+        put :update, params: {id: calendar.to_param, calendar: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -118,11 +118,11 @@ RSpec.describe CalendarLinksController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested calendar_link" do
-      calendar_link = CalendarLink.create! valid_attributes
+    it "destroys the requested calendar" do
+      calendar = Calendar.create! valid_attributes
       expect {
-        delete :destroy, params: {id: calendar_link.to_param}, session: valid_session
-      }.to change(CalendarLink, :count).by(-1)
+        delete :destroy, params: {id: calendar.to_param}, session: valid_session
+      }.to change(Calendar, :count).by(-1)
     end
   end
 

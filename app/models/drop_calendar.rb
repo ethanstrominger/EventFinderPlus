@@ -1,0 +1,2 @@
+class DropCalendar < ApplicationRecord
+end

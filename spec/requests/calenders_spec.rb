@@ -8,7 +8,7 @@ RSpec.configure do |c|
   c.include AuthHelper
 end
 
-RSpec.describe 'CalendarLinks', type: :request do
+RSpec.describe 'Calendars', type: :request do
   before(:all) do
     signup_and_in
   end
@@ -17,9 +17,9 @@ RSpec.describe 'CalendarLinks', type: :request do
     User.delete_all
   end
 
-  describe 'GET /calendar_links', describe_name: 'get_calendar_links' do
+  describe 'GET /calendars', describe_name: 'get_calendars' do
     it 'works! (now write some real specs)' do
-      get calendar_links_path, headers: headers
+      get calendars_path, headers: headers
       expect(response).to have_http_status(200)
     end
   end
