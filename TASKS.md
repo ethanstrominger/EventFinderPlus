@@ -31,9 +31,25 @@ A2
 
 1. [X] add buttons to list screen for sign out and change password
 
+1. [X] Display Success messages for saving
+2. [X] Delete message when go to new screen or detail screen
+3. [X] Get rid of new button when go to new screen or detail screen
+4. [X] Display new button when return from detail screen
+5. [X] Sign In user after signing up
+6. [X] Semantic
+
 1. [ ] Deploy
 1. [ ] README.md (see checklist)
 1. [ ] STORIES.md
+2. [ ] New - let user keep adding new
+
+1. [ ] Rename back-to-calendar-button to back-to-calendars-button
+2. [ ] Fix back on change password so it does not requery calendars
+2. [ ] Hide buttons when signing in and signing up and add back button
+2. [ ] Add more detail to error message, if possible.  Investigate response
+2. [ ] Look at refactoring.  Take any ui out of events.  Name functions better?
+3. [ ] Write up functions
+4. [ ] Change functions that are local to have _ in them
 
 Future
 
