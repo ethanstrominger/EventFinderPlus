@@ -33,4 +33,4 @@ a decision will be made on whether to create additional unit tests.
 The ERD diagram were created using drawio.  Source for the images are
 [here](markdown_images/drawio).
 
-![Home Page](markdown_images/drawio/mockup-erd.png?raw=true)
+![ERD](markdown_images/drawio/erd.png?raw=true)
