@@ -4,7 +4,7 @@
 
 This repository includes code for the Event Finder Plus backend.
 
-The [README.md][ui] for the frontend includes more information on the product, planning, backlog, and other aspects of the projects.  See
+The [README.md][ui] for the frontend includes more information on the product, planning, backlog, and other aspects of the projects.  See https://github.com/ethanstrominger/event-finder-plus-ui.
 
 Application is deployed [here](https://ethanstrominger.github.io/event-finder-plus-ui/)
 
