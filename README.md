@@ -1,10 +1,10 @@
 [deployment]: (https://ethanstrominger.github.io/event-finder-plus-ui/)
 [rspec-tag]: (https://relishapp.com/rspec/rspec-core/v/2-12/docs/command-line/tag-option)
-[ui]: (https://github.com/ethanstrominger/EventFinderPlus)
+[ui]: (https://github.com/ethanstrominger/event-finder-plus-ui)
 
 This repository includes code for the Event Finder Plus backend.
 
-The [README.md][ui] for the frontend includes more information on the product, planning, backlog, and other aspects of the projects.
+The [README.md][ui] for the frontend includes more information on the product, planning, backlog, and other aspects of the projects.  See
 
 Application is deployed [here](https://ethanstrominger.github.io/event-finder-plus-ui/)
 
